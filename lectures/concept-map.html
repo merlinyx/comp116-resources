@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COMP 116 – Double Bubble Concept Map</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #ffffff;
+      font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px 30px;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      background: #A8BFDB;
+      border-bottom: 3px solid #8BA7CC;
+      padding: 14px 32px 12px;
+      margin-bottom: 18px;
+    }
+
+    header h1 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #1a2d52;
+      letter-spacing: 0.01em;
+    }
+
+    header p {
+      font-size: 0.9rem;
+      color: #3a5070;
+      margin-top: 2px;
+    }
+
+    #map-container {
+      width: 100%;
+      max-width: 1300px;
+    }
+
+    svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ---- Connection table below the map ---- */
+    .connections-table {
+      width: 100%;
+      max-width: 1060px;
+      margin-top: 28px;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    .connections-table th {
+      background: #1a2d52;
+      color: white;
+      padding: 8px 14px;
+      text-align: left;
+    }
+
+    .connections-table td {
+      padding: 7px 14px;
+      border-bottom: 1px solid #dde4ee;
+      vertical-align: top;
+    }
+
+    .connections-table tr:nth-child(even) td {
+      background: #f4f7fb;
+    }
+
+    .prog-col { color: #3B5FA0; font-weight: 600; }
+    .knit-col { color: #9B4E2A; font-weight: 600; }
+    .bridge-col { color: #3A7A5A; font-weight: 600; }
+
+    .legend {
+      display: flex;
+      gap: 28px;
+      margin-top: 18px;
+      font-size: 0.82rem;
+      color: #444;
+      justify-content: center;
+    }
+
+    .legend-item { display: flex; align-items: center; gap: 7px; }
+    .legend-dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      display: inline-block; flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>COMP 116 Spring 2026 — Double Bubble Concept Map</h1>
+  <p>Introduction to Programming with Machine Knitting · Yuxuan Mei</p>
+</header>
+
+<div id="map-container">
+<svg viewBox="0 0 1340 660" xmlns="http://www.w3.org/2000/svg" aria-label="Double bubble concept map connecting Python programming and machine knitting">
+
+  <defs>
+    <!-- Soft drop shadow -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-color="#0003"/>
+    </filter>
+
+    <!-- Arrow marker for connection lines -->
+    <marker id="arr-prog" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3B5FA0" opacity="0.55"/>
+    </marker>
+    <marker id="arr-knit" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#9B4E2A" opacity="0.55"/>
+    </marker>
+  </defs>
+
+  <!-- ════════════════════════════════════
+       CONNECTION LINES (drawn first, under bubbles)
+       ════════════════════════════════════ -->
+
+  <!-- Lines: Programming center → shared concepts -->
+  <!-- Sequences -->
+  <line x1="310" y1="330" x2="630" y2="108" stroke="#3B5FA0" stroke-width="1.8" stroke-opacity="0.45" stroke-dasharray="6,4"/>
+  <!-- Repetition -->
+  <line x1="310" y1="330" x2="630" y2="224" stroke="#3B5FA0" stroke-width="1.8" stroke-opacity="0.45" stroke-dasharray="6,4"/>
+  <!-- Conditions -->
+  <line x1="310" y1="330" x2="630" y2="340" stroke="#3B5FA0" stroke-width="1.8" stroke-opacity="0.45" stroke-dasharray="6,4"/>
+  <!-- Abstraction -->
+  <line x1="310" y1="330" x2="630" y2="454" stroke="#3B5FA0" stroke-width="1.8" stroke-opacity="0.45" stroke-dasharray="6,4"/>
+  <!-- Structured Data -->
+  <line x1="310" y1="330" x2="630" y2="568" stroke="#3B5FA0" stroke-width="1.8" stroke-opacity="0.45" stroke-dasharray="6,4"/>
+
+  <!-- Lines: Knitting center → shared concepts -->
+  <!-- Sequences -->
+  <line x1="1030" y1="330" x2="770" y2="108" stroke="#9B4E2A" stroke-width="1.8" stroke-opacity="0.45" stroke-dasharray="6,4"/>
+  <!-- Repetition -->
+  <line x1="1030" y1="330" x2="770" y2="224" stroke="#9B4E2A" stroke-width="1.8" stroke-opacity="0.45" stroke-dasharray="6,4"/>
+  <!-- Conditions -->
+  <line x1="1030" y1="330" x2="770" y2="340" stroke="#9B4E2A" stroke-width="1.8" stroke-opacity="0.45" stroke-dasharray="6,4"/>
+  <!-- Abstraction -->
+  <line x1="1030" y1="330" x2="770" y2="454" stroke="#9B4E2A" stroke-width="1.8" stroke-opacity="0.45" stroke-dasharray="6,4"/>
+  <!-- Structured Data -->
+  <line x1="1030" y1="330" x2="770" y2="568" stroke="#9B4E2A" stroke-width="1.8" stroke-opacity="0.45" stroke-dasharray="6,4"/>
+
+  <!-- Lines: Programming outer → center -->
+  <!-- Variables & Types -->
+  <line x1="140" y1="108" x2="248" y2="290" stroke="#3B5FA0" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- Scope & Return -->
+  <line x1="115" y1="224" x2="240" y2="305" stroke="#3B5FA0" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- Testing & Debugging -->
+  <line x1="115" y1="340" x2="240" y2="330" stroke="#3B5FA0" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- Dicts / Sets / Tuples -->
+  <line x1="115" y1="454" x2="240" y2="355" stroke="#3B5FA0" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- OOP: Classes & Objects -->
+  <line x1="140" y1="568" x2="248" y2="372" stroke="#3B5FA0" stroke-width="1.5" stroke-opacity="0.35"/>
+
+  <!-- Lines: Knitting outer → center -->
+  <!-- Needle Bed anatomy -->
+  <line x1="1200" y1="108" x2="1092" y2="290" stroke="#9B4E2A" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- Yarn & Carriers -->
+  <line x1="1225" y1="224" x2="1100" y2="305" stroke="#9B4E2A" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- Colorwork -->
+  <line x1="1225" y1="340" x2="1100" y2="330" stroke="#9B4E2A" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- Shaping -->
+  <line x1="1225" y1="454" x2="1100" y2="355" stroke="#9B4E2A" stroke-width="1.5" stroke-opacity="0.35"/>
+  <!-- Laces -->
+  <line x1="1200" y1="568" x2="1092" y2="372" stroke="#9B4E2A" stroke-width="1.5" stroke-opacity="0.35"/>
+
+
+  <!-- ════════════════════════════════════
+       CENTER BUBBLES
+       ════════════════════════════════════ -->
+
+  <!-- Python Programming center bubble -->
+  <circle cx="310" cy="330" r="105" fill="#3B5FA0" filter="url(#shadow)"/>
+  <circle cx="310" cy="330" r="105" fill="url(#prog-grad)"/>
+  <defs>
+    <radialGradient id="prog-grad" cx="38%" cy="35%">
+      <stop offset="0%" stop-color="#5B80CC"/>
+      <stop offset="100%" stop-color="#2B4A8A"/>
+    </radialGradient>
+  </defs>
+  <text x="310" y="316" text-anchor="middle" fill="white" font-size="18" font-weight="700">Python</text>
+  <text x="310" y="338" text-anchor="middle" fill="white" font-size="18" font-weight="700">Programming</text>
+  <text x="310" y="356" text-anchor="middle" fill="#c8d8f8" font-size="13">(COMP 116)</text>
+
+  <!-- Machine Knitting center bubble -->
+  <defs>
+    <radialGradient id="knit-grad" cx="38%" cy="35%">
+      <stop offset="0%" stop-color="#C97A50"/>
+      <stop offset="100%" stop-color="#7A3518"/>
+    </radialGradient>
+  </defs>
+  <circle cx="1030" cy="330" r="105" fill="#9B4E2A" filter="url(#shadow)"/>
+  <circle cx="1030" cy="330" r="105" fill="url(#knit-grad)"/>
+  <text x="1030" y="316" text-anchor="middle" fill="white" font-size="18" font-weight="700">Machine</text>
+  <text x="1030" y="338" text-anchor="middle" fill="white" font-size="18" font-weight="700">Knitting</text>
+  <text x="1030" y="356" text-anchor="middle" fill="#f8dece" font-size="13">(COMP 116)</text>
+
+
+  <!-- ════════════════════════════════════
+       SHARED / BRIDGE CONCEPT BUBBLES (center column)
+       ════════════════════════════════════ -->
+
+  <defs>
+    <radialGradient id="shared-grad" cx="38%" cy="35%">
+      <stop offset="0%" stop-color="#62B890"/>
+      <stop offset="100%" stop-color="#2E7A56"/>
+    </radialGradient>
+  </defs>
+
+  <!-- 1. Sequences of Instructions -->
+  <ellipse cx="700" cy="108" rx="130" ry="48" fill="url(#shared-grad)" filter="url(#shadow)"/>
+  <text x="700" y="100" text-anchor="middle" fill="white" font-size="13" font-weight="700">Sequences of</text>
+  <text x="700" y="116" text-anchor="middle" fill="white" font-size="13" font-weight="700">Instructions</text>
+  <!-- Side labels -->
+  <text x="596" y="88" text-anchor="middle" fill="#2B4A8A" font-size="10.5" font-style="italic">statements in order</text>
+  <text x="806" y="88" text-anchor="middle" fill="#7A3518" font-size="10.5" font-style="italic">rows knit in order</text>
+
+  <!-- 2. Repetition -->
+  <ellipse cx="700" cy="224" rx="130" ry="48" fill="url(#shared-grad)" filter="url(#shadow)"/>
+  <text x="700" y="216" text-anchor="middle" fill="white" font-size="13" font-weight="700">Repetition</text>
+  <text x="700" y="232" text-anchor="middle" fill="white" font-size="13" font-weight="700">&amp; Iteration</text>
+  <text x="596" y="204" text-anchor="middle" fill="#2B4A8A" font-size="10.5" font-style="italic">for / while loops</text>
+  <text x="806" y="204" text-anchor="middle" fill="#7A3518" font-size="10.5" font-style="italic">rows &amp; passes</text>
+
+  <!-- 3. Conditional Logic -->
+  <ellipse cx="700" cy="340" rx="130" ry="48" fill="url(#shared-grad)" filter="url(#shadow)"/>
+  <text x="700" y="332" text-anchor="middle" fill="white" font-size="13" font-weight="700">Conditional</text>
+  <text x="700" y="348" text-anchor="middle" fill="white" font-size="13" font-weight="700">Logic</text>
+  <text x="596" y="320" text-anchor="middle" fill="#2B4A8A" font-size="10.5" font-style="italic">if / elif / else</text>
+  <text x="806" y="320" text-anchor="middle" fill="#7A3518" font-size="10.5" font-style="italic">knit vs. purl, colorwork</text>
+
+  <!-- 4. Abstraction & Reuse -->
+  <ellipse cx="700" cy="454" rx="130" ry="48" fill="url(#shared-grad)" filter="url(#shadow)"/>
+  <text x="700" y="446" text-anchor="middle" fill="white" font-size="13" font-weight="700">Abstraction</text>
+  <text x="700" y="462" text-anchor="middle" fill="white" font-size="13" font-weight="700">&amp; Reuse</text>
+  <text x="596" y="434" text-anchor="middle" fill="#2B4A8A" font-size="10.5" font-style="italic">functions &amp; classes</text>
+  <text x="806" y="434" text-anchor="middle" fill="#7A3518" font-size="10.5" font-style="italic">techniques &amp; machine parts</text>
+
+  <!-- 5. Structured Data → Output -->
+  <ellipse cx="700" cy="568" rx="130" ry="48" fill="url(#shared-grad)" filter="url(#shadow)"/>
+  <text x="700" y="558" text-anchor="middle" fill="white" font-size="13" font-weight="700">Structured Data</text>
+  <text x="700" y="574" text-anchor="middle" fill="white" font-size="13" font-weight="700">&amp; File Output</text>
+  <text x="596" y="548" text-anchor="middle" fill="#2B4A8A" font-size="10.5" font-style="italic">2D arrays, file I/O</text>
+  <text x="806" y="548" text-anchor="middle" fill="#7A3518" font-size="10.5" font-style="italic">stitch grid, knitout/.dat</text>
+
+
+  <!-- ════════════════════════════════════
+       PROGRAMMING OUTER UNIQUE BUBBLES (left)
+       ════════════════════════════════════ -->
+
+  <defs>
+    <radialGradient id="prog-outer-grad" cx="38%" cy="35%">
+      <stop offset="0%" stop-color="#7DA4DE"/>
+      <stop offset="100%" stop-color="#3B5FA0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Variables & Types -->
+  <ellipse cx="138" cy="108" rx="112" ry="46" fill="url(#prog-outer-grad)" filter="url(#shadow)"/>
+  <text x="138" y="100" text-anchor="middle" fill="white" font-size="12.5" font-weight="600">Variables &amp; Types</text>
+  <text x="138" y="116" text-anchor="middle" fill="#ccdcf8" font-size="11">int, str, bool, float</text>
+
+  <!-- Scope & Return Values -->
+  <ellipse cx="110" cy="224" rx="98" ry="46" fill="url(#prog-outer-grad)" filter="url(#shadow)"/>
+  <text x="110" y="216" text-anchor="middle" fill="white" font-size="12.5" font-weight="600">Scope &amp; Return</text>
+  <text x="110" y="232" text-anchor="middle" fill="#ccdcf8" font-size="11">parameters, values</text>
+
+  <!-- Testing & Debugging -->
+  <ellipse cx="108" cy="340" rx="102" ry="46" fill="url(#prog-outer-grad)" filter="url(#shadow)"/>
+  <text x="108" y="332" text-anchor="middle" fill="white" font-size="12.5" font-weight="600">Testing &amp;</text>
+  <text x="108" y="348" text-anchor="middle" fill="white" font-size="12.5" font-weight="600">Debugging</text>
+
+  <!-- Dicts, Sets, Tuples -->
+  <ellipse cx="108" cy="454" rx="102" ry="46" fill="url(#prog-outer-grad)" filter="url(#shadow)"/>
+  <text x="108" y="446" text-anchor="middle" fill="white" font-size="12.5" font-weight="600">Dicts, Sets</text>
+  <text x="108" y="462" text-anchor="middle" fill="#ccdcf8" font-size="11">&amp; Tuples</text>
+
+  <!-- OOP: Classes & Objects -->
+  <ellipse cx="138" cy="568" rx="112" ry="46" fill="url(#prog-outer-grad)" filter="url(#shadow)"/>
+  <text x="138" y="560" text-anchor="middle" fill="white" font-size="12.5" font-weight="600">OOP: Classes</text>
+  <text x="138" y="576" text-anchor="middle" fill="#ccdcf8" font-size="11">&amp; Objects</text>
+
+
+  <!-- ════════════════════════════════════
+       KNITTING OUTER UNIQUE BUBBLES (right)
+       ════════════════════════════════════ -->
+
+  <defs>
+    <radialGradient id="knit-outer-grad" cx="38%" cy="35%">
+      <stop offset="0%" stop-color="#DBA070"/>
+      <stop offset="100%" stop-color="#9B4E2A"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Needle Bed anatomy -->
+  <ellipse cx="1202" cy="108" rx="122" ry="46" fill="url(#knit-outer-grad)" filter="url(#shadow)"/>
+  <text x="1202" y="100" text-anchor="middle" fill="white" font-size="12.5" font-weight="600">Needle Bed</text>
+  <text x="1202" y="116" text-anchor="middle" fill="#f8dece" font-size="11">needles, sinkers, sliders</text>
+
+  <!-- Yarn & Carriers -->
+  <ellipse cx="1230" cy="224" rx="100" ry="46" fill="url(#knit-outer-grad)" filter="url(#shadow)"/>
+  <text x="1230" y="216" text-anchor="middle" fill="white" font-size="12.5" font-weight="600">Yarn &amp; Carriers</text>
+  <text x="1230" y="232" text-anchor="middle" fill="#f8dece" font-size="11">tension, .dat</text>
+
+  <!-- Colorwork -->
+  <ellipse cx="1232" cy="340" rx="102" ry="46" fill="url(#knit-outer-grad)" filter="url(#shadow)"/>
+  <text x="1232" y="332" text-anchor="middle" fill="white" font-size="12.5" font-weight="600">Colorwork</text>
+  <text x="1232" y="348" text-anchor="middle" fill="#f8dece" font-size="11">jacquard, stranded</text>
+
+  <!-- Shaping -->
+  <ellipse cx="1232" cy="454" rx="102" ry="46" fill="url(#knit-outer-grad)" filter="url(#shadow)"/>
+  <text x="1232" y="446" text-anchor="middle" fill="white" font-size="12.5" font-weight="600">Shaping</text>
+  <text x="1232" y="462" text-anchor="middle" fill="#f8dece" font-size="11">inc, dec, short rows</text>
+
+  <!-- Laces -->
+  <ellipse cx="1202" cy="568" rx="112" ry="46" fill="url(#knit-outer-grad)" filter="url(#shadow)"/>
+  <text x="1202" y="560" text-anchor="middle" fill="white" font-size="12.5" font-weight="600">Laces &amp; Complexity</text>
+  <text x="1202" y="576" text-anchor="middle" fill="#f8dece" font-size="11">transfers, tubular</text>
+
+
+  <!-- ════════════════════════════════════
+       DECORATIVE LABELS at top
+       ════════════════════════════════════ -->
+  <text x="310" y="28" text-anchor="middle" fill="#3B5FA0" font-size="15" font-weight="700" opacity="0.7">PROGRAMMING</text>
+  <text x="310" y="44" text-anchor="middle" fill="#3B5FA0" font-size="11" opacity="0.6">(unique concepts)</text>
+
+  <text x="700" y="28" text-anchor="middle" fill="#2E7A56" font-size="15" font-weight="700" opacity="0.7">BOTH</text>
+  <text x="700" y="44" text-anchor="middle" fill="#2E7A56" font-size="11" opacity="0.6">(shared ideas)</text>
+
+  <text x="1030" y="28" text-anchor="middle" fill="#9B4E2A" font-size="15" font-weight="700" opacity="0.7">KNITTING</text>
+  <text x="1030" y="44" text-anchor="middle" fill="#9B4E2A" font-size="11" opacity="0.6">(unique concepts)</text>
+
+</svg>
+</div>
+
+<!-- ── Connection table ── -->
+<table class="connections-table">
+  <thead>
+    <tr>
+      <th style="width:28%">🖥️ Programming Concept</th>
+      <th style="width:22%; background:#2E7A56;">🔗 Shared Idea</th>
+      <th style="width:28%">🧶 Knitting Concept</th>
+      <th style="width:22%">Why it connects</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="prog-col">Statements execute in order</td>
+      <td class="bridge-col">Sequences of Instructions</td>
+      <td class="knit-col">Rows knit in sequence</td>
+      <td>Both produce a result by following ordered steps</td>
+    </tr>
+    <tr>
+      <td class="prog-col">for / while loops</td>
+      <td class="bridge-col">Repetition &amp; Iteration</td>
+      <td class="knit-col">Rows / passes on the machine</td>
+      <td>Repeat a block of actions to build up structure</td>
+    </tr>
+    <tr>
+      <td class="prog-col">if / elif / else</td>
+      <td class="bridge-col">Conditional Logic</td>
+      <td class="knit-col">Knit vs. purl; colorwork decisions</td>
+      <td>Branch behavior based on current state</td>
+    </tr>
+    <tr>
+      <td class="prog-col">Functions &amp; Classes</td>
+      <td class="bridge-col">Abstraction &amp; Reuse</td>
+      <td class="knit-col">Named techniques; machine components</td>
+      <td>Name and reuse a procedure; hide internal detail</td>
+    </tr>
+    <tr>
+      <td class="prog-col">2D arrays + File I/O</td>
+      <td class="bridge-col">Structured Data &amp; Output</td>
+      <td class="knit-col">Stitch grid (course × wale); knitout / .dat</td>
+      <td>A grid encodes the pattern; files drive the machine</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="legend">
+  <div class="legend-item"><span class="legend-dot" style="background:#3B5FA0"></span> Python Programming</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#3A7A5A"></span> Shared / Bridge Concept</div>
+  <div class="legend-item"><span class="legend-dot" style="background:#9B4E2A"></span> Machine Knitting</div>
+</div>
+
+<p style="margin-top:22px; font-size:0.78rem; color:#888; text-align:center;">
+  COMP 116 Spring 2026 · Introduction to Programming with Machine Knitting · Yuxuan Mei
+</p>
+
+</body>
+</html>
